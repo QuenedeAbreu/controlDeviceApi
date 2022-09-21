@@ -46,7 +46,6 @@ export const loginUser = async (req: Request, res: Response) => {
     if (update) {
 
       const responseLdap = await authenticateLdap({ username, password })
-
       if (ResponseUser && responseLdap.auth) {
         if (roleUser(responseLdap.user as IUserRole)) {
           roleUserFinall = roleUser(responseLdap.user as IUserRole).roleNumber;
